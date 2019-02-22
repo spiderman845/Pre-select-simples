@@ -1,0 +1,22 @@
+{
+    "name": "sleepz/module-preselectproduct",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "yasir.latif@cubitabo.de",
+            "name": "yasir latif"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Sleepz\\PreselectProduct\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

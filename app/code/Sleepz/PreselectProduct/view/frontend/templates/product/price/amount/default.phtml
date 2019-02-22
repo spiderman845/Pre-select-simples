@@ -1,0 +1,48 @@
+<?php
+    /**
+     * Copyright © Magento, Inc. All rights reserved.
+     * See COPYING.txt for license details.
+     */
+
+    // @codingStandardsIgnoreFile
+
+?>
+
+<?php /** @var \Magento\Framework\Pricing\Render\Amount $block */ ?>
+
+<?php
+    $displayValue = ($block->getLayeredConfiguredPrice()) ?: $block->getDisplayValue();
+?>
+
+<span class="price-container <?= /* @escapeNotVerified */
+    $block->getAdjustmentCssClasses() ?>"
+    <?php if ($block->getPriceType() != 'oldPrice'): ?>
+        itemprop="offers" itemscope itemtype="http://schema.org/Offer"
+    <?php endif; ?>
+>
+    <?php if ($block->getDisplayLabel()): ?>
+        <span class="price-label"><?= /* @escapeNotVerified */
+                $block->getDisplayLabel() ?></span>
+    <?php endif; ?>
+    <span <?php if ($block->getPriceId()): ?> id="<?= /* @escapeNotVerified */
+    $block->getPriceId() ?>"<?php endif; ?>
+        <?= ($block->getPriceDisplayLabel()) ? 'data-label="' . $block->getPriceDisplayLabel() . $block->getPriceDisplayInclExclTaxes() . '"' : '' ?>
+            data-price-amount="<?= /* @escapeNotVerified */
+                $displayValue ?>"
+            data-price-type="<?= /* @escapeNotVerified */
+                $block->getPriceType() ?>"
+            class="price-wrapper <?= /* @escapeNotVerified */
+                $block->getPriceWrapperCss() ?>">
+        <?= /* @escapeNotVerified */
+            $block->formatCurrency($displayValue, (bool)$block->getIncludeContainer()) ?>
+    </span>
+    <?php if ($block->hasAdjustmentsHtml()): ?>
+        <?= $block->getAdjustmentsHtml() ?>
+    <?php endif; ?>
+    <?php if ($block->getPriceType() != 'oldPrice'): ?>
+        <meta itemprop="price" content="<?= /* @escapeNotVerified */
+            $displayValue ?>"/>
+        <meta itemprop="priceCurrency" content="<?= /* @escapeNotVerified */
+            $block->getDisplayCurrencyCode() ?>"/>
+    <?php endif; ?>
+</span>

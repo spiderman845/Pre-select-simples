@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <referenceBlock name="render.product.prices">
+        <arguments>
+            <argument name="configurable" xsi:type="array">
+                <item name="prices" xsi:type="array">
+                    <item name="final_price" xsi:type="array">
+                        <item name="render_class" xsi:type="string">Sleepz\PreselectProduct\Pricing\Render\SelectedFinalPriceBox</item>
+                        <item name="render_template" xsi:type="string">Sleepz_PreselectProduct::product/price/final_price.phtml</item>
+                        <item name="amount_render_template" xsi:type="string">Sleepz_PreselectProduct::product/price/amount/default.phtml</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </referenceBlock>
+</layout>

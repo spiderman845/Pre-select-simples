@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Tab\Variations\Config\Matrix">
+        <plugin name="sleepz_preselect_product_variations_matrix" type="Sleepz\PreselectProduct\Plugin\Block\Adminhtml\Product\Edit\Tab\Variations\Config\Matrix" />
+    </type>
+    <type name="Magento\ConfigurableProduct\Ui\DataProvider\Product\Form\Modifier\ConfigurablePanel">
+        <plugin name="modifyPanel" type="Sleepz\PreselectProduct\Plugin\Ui\DataProvider\Product\Form\Modifier\ConfigurablePanel" />
+    </type>
+    <type name="Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper">
+        <plugin name="sleepz_product_update_default" type="Sleepz\PreselectProduct\Plugin\Controller\Adminhtml\Product\Initialization\Helper\Plugin\UpdateDefault" sortOrder="60" />
+    </type>
+    <type name="Magento\ConfigurableProduct\Ui\DataProvider\Product\Form\Modifier\Data\AssociatedProducts">
+        <plugin name="modifyMatrix" type="Sleepz\PreselectProduct\Plugin\Ui\DataProvider\Product\Form\Modifier\Data\AssociatedProducts" />
+    </type>
+</config>
