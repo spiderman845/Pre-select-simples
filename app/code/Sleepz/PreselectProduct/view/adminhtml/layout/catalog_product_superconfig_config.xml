@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <body>
+       <referenceBlock name="product_tabs">
+           <block class="Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Tab\Variations\Config" name="admin.product.edit.tab.super.config.grid.container">
+               <block class="Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Tab\Variations\Config\Matrix" template="Sleepz_PreselectProduct::catalog/product/edit/super/matrix.phtml" as="matrix"/>
+           </block>
+       </referenceBlock>
+   </body>
+</page>
